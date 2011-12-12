@@ -1,0 +1,14 @@
+Cortex is a neural network library intended for ease of use, extensibility, and biological plausibility. It uses the XCAL learning rule and kWTA inhibition, is written in Python and relies on Numpy.
+
+Cortex is written in Python and relies on numpy (a fast, n-dimensional array library for Python) for all heavy computation. Numpy allows Cortex to be fast and powerful, handling thousands to millions of neurons, while still maintaining the readability and ease of use characteristic of Python.
+
+Neural networks built using Cortex are composed of Layers, Connections, and a Cortex. A Cortex object represents the network as a whole, and contains layers and connections. A Layer object represents a layer of neurons, which is then connected to other layers (including itself, if need be) by Connections. Each Connection has a source and a destination layer.
+
+Subclassing is the main method of customization. There is already an InputLayer and an OutputLayer subclass of Layer, but it is expected that the average user will need to further subclass InputLayer at the very least.
+
+The main motivation for building this library was that no other neural network library (that we could find) supported the XCAL learning rule. If you are more interested in learning rules like Backpropagation, you may be more happy with another library like PyBrain.
+
+Files
+	cortex.py: the only file you need to build your own neural network
+	visual_cortex.py: included to provide an example of Cortex in the "real world", and how to use it. This learns to do object recognition.
+	retina.py: simulates a human retina (via the Difference-of-Gaussian filter), and is necessary for visual_cortex.py
